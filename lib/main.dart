@@ -43,8 +43,36 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Its new app..."),
       ),
-      body: Container(
-        child: Text("Its new app body..."),
+      // body:Container(child: Text("Hi"))
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(8),
+          // color: Colors.red, // Cannot provide both a color and a decoration
+          width: 200,
+          height: 200,
+          child: Text("Using COntainer to create a box",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              )),
+          alignment: Alignment.center, // align the child
+          // constraints: ,
+          // gradients, etc...
+          decoration: BoxDecoration(
+              color: Colors.red,
+              // shape: BoxShape.circle,
+              // clipBehavior: Clip.antiAlias,
+              // Clip.antiAliasWithSaveLayer    // Clip.hardEdge
+
+              borderRadius: BorderRadius.circular(10),
+              // border:
+              gradient: LinearGradient(colors: [Colors.blue, Colors.amber]),
+              boxShadow: [
+                BoxShadow(color: Colors.grey, blurRadius: 10),
+              ]),
+        ),
       ),
     );
   }
