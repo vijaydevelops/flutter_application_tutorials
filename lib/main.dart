@@ -49,13 +49,15 @@ class HomePage extends StatelessWidget {
           // using crossAxisAlignment in the Row child, works differently
           Container(
         color: Colors.teal,
-        height: 500,
-        child: Row(
+        // height: 500,
+        width: 300,
+        child: Column(
           mainAxisAlignment:
               MainAxisAlignment.spaceEvenly, // MainAxisAlignment.end
           crossAxisAlignment:
               CrossAxisAlignment.center, // CrossAxisAlignment.stretch,
           // when only row is used, the row height is determined to be filled in the space available
+          // mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             Container(
               padding: const EdgeInsets.all(8),
