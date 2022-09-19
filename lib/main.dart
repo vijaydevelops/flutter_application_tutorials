@@ -44,34 +44,65 @@ class HomePage extends StatelessWidget {
         title: Text("Its new app..."),
       ),
       // body:Container(child: Text("Hi"))
-      body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(8),
-          // color: Colors.red, // Cannot provide both a color and a decoration
-          width: 200,
-          height: 200,
-          child: Text("Using COntainer to create a box",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              )),
-          alignment: Alignment.center, // align the child
-          // constraints: ,
-          // gradients, etc...
-          decoration: BoxDecoration(
+      body:
+          // vertically centered the div uisng Center widget
+          // using crossAxisAlignment in the Row child, works differently
+          Container(
+        color: Colors.teal,
+        height: 500,
+        child: Row(
+          mainAxisAlignment:
+              MainAxisAlignment.spaceEvenly, // MainAxisAlignment.end
+          crossAxisAlignment:
+              CrossAxisAlignment.center, // CrossAxisAlignment.stretch,
+          // when only row is used, the row height is determined to be filled in the space available
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.all(8),
+              // color: Colors.red, // Cannot provide both a color and a decoration
+              width: 100,
+              height: 100,
+              child: Text("Using COntainer to create a box",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  )),
+              alignment: Alignment.center, // align the child
               color: Colors.red,
-              // shape: BoxShape.circle,
-              // clipBehavior: Clip.antiAlias,
-              // Clip.antiAliasWithSaveLayer    // Clip.hardEdge
-
-              borderRadius: BorderRadius.circular(10),
-              // border:
-              gradient: LinearGradient(colors: [Colors.blue, Colors.amber]),
-              boxShadow: [
-                BoxShadow(color: Colors.grey, blurRadius: 10),
-              ]),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              // color: Colors.red, // Cannot provide both a color and a decoration
+              width: 100,
+              height: 100,
+              child: Text("Using COntainer to create a box",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  )),
+              alignment: Alignment.center, // align the child
+              color: Colors.yellow,
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              // color: Colors.red, // Cannot provide both a color and a decoration
+              width: 100,
+              height: 100,
+              child: Text("Using COntainer to create a box",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  )),
+              alignment: Alignment.center, // align the child
+              color: Colors.green,
+            ),
+          ],
         ),
       ),
     );
