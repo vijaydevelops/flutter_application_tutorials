@@ -27,9 +27,14 @@ void main(List<String> args) {
   ));
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     /*
@@ -40,15 +45,42 @@ class HomePage extends StatelessWidget {
     */
     // using another widget
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text("Its new app..."),
       ),
       // body:Container(child: Text("Hi"))
       body: Center(
-        child: Container(
-          color: Colors.teal,
-          // height: 500,
-          width: 300,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: SingleChildScrollView(
+            child: Card(
+              child: Column(children: <Widget>[
+                Image.asset("assets/vijay.png",
+                    // width: 200,
+                    fit: BoxFit.contain),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Update after click",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        hintText: "Enter the name",
+                        labelText: "Name",
+                        border: OutlineInputBorder()),
+                  ),
+                )
+              ]),
+            ),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
