@@ -35,6 +35,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var myText = "Update after click";
+  TextEditingController _controllerTextEdit = TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     /*
@@ -63,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                   height: 20,
                 ),
                 Text(
-                  "Update after click",
+                  myText,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
@@ -73,9 +88,11 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(16.0),
                   child: TextField(
                     decoration: InputDecoration(
-                        hintText: "Enter the name",
-                        labelText: "Name",
-                        border: OutlineInputBorder()),
+                      hintText: "Enter the name",
+                      labelText: "Name",
+                      border: OutlineInputBorder(),
+                    ),
+                    controller: _controllerTextEdit,
                   ),
                 )
               ]),
@@ -84,7 +101,10 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
+        onPressed: () {
+          myText = _controllerTextEdit.text;
+          setState(() {});
+        },
         child: Icon(Icons.send),
         // mini: true,
       ),
